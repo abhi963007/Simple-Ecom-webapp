@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Handle category pages
+RewriteRule ^categories/([0-9]+)/?$ categories/index.php?id=$1 [L,QSA]
+
+# Handle product pages
+RewriteRule ^products/([0-9]+)/?$ products/details.php?id=$1 [L,QSA]
+
+# Remove index.php from URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)index\.php [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Add trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+# Prevent directory listing
+Options -Indexes
+
+# Handle errors
+ErrorDocument 404 /rogin/404.php
+ErrorDocument 500 /rogin/500.php 
