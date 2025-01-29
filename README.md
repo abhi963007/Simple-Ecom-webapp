@@ -165,6 +165,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-Made with ❤️ by [Abhijith](https://github.com/abhi963007)
+Made with ❤️ by [Abhiram](https://github.com/abhi963007)
 
 </div> 
